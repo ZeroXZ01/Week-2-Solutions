@@ -144,6 +144,10 @@ public class AccountService {
         bankingSystem.fetchAccount();
     }
 
+    public void getAccountsSortedByBalance(){
+        bankingSystem.getAccountsSortedByBalance();
+    }
+
     public void applyMonthlyFeesAndInterest() {
         bankingSystem.applyMonthlyFeesAndInterest();
     }

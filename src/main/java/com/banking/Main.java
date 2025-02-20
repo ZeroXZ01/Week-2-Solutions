@@ -34,7 +34,7 @@ public class Main {
 
             try {
                 processChoice(choice);
-                if (choice == 12) {
+                if (choice == 13) {
                     break;
                 }
             } catch (Exception e) {
@@ -74,10 +74,11 @@ public class Main {
         System.out.println("OPTIONALS");
         System.out.println("7. Apply Monthly Fees");
         System.out.println("8. Calculate the Total Balance of Accounts");
-        System.out.println("9. Display Account(s) with the Lowest Balance");
-        System.out.println("10. Calculate the Total Number of Accounts");
-        System.out.println("11. Clear Transactions");
-        System.out.println("12. Exit");
+        System.out.println("9. Display All Accounts Sorted by Balance (Lowest to Highest)");
+        System.out.println("10. Display Account(s) with the Lowest Balance");
+        System.out.println("11. Calculate the Total Number of Accounts");
+        System.out.println("12. Clear Transactions");
+        System.out.println("13. Exit");
         System.out.println("========================");
     }
 
@@ -110,15 +111,18 @@ public class Main {
                 System.out.println("The combined balance of all accounts is $" + totalBalance);
                 break;
             case 9:
-                accountService.getAccountWithMinBalance();
+                accountService.getAccountsSortedByBalance();
                 break;
             case 10:
-                System.out.println("The total number of accounts is: " + accountService.getNumberOfAccounts());
+                accountService.getAccountWithMinBalance();
                 break;
             case 11:
-                transactionLogger.clearTransactions();
+                System.out.println("The total number of accounts is: " + accountService.getNumberOfAccounts());
                 break;
             case 12:
+                transactionLogger.clearTransactions();
+                break;
+            case 13:
                 System.out.println("Thank you for using the Banking System!");
                 break;
             default:
