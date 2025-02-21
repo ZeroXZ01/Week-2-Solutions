@@ -102,7 +102,7 @@ public class AccountService {
      * Transfer money between accounts
      */
     public void transfer(String fromAccountId, String toAccountId, BigDecimal amount)
-            throws BankingException {
+            throws BankingException, InsufficientFundsException, AccountNotFoundException {
         // Check that transfer amount is positive
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             throw new BankingException("Transfer amount must be positive");
@@ -162,10 +162,6 @@ public class AccountService {
 
     public int getNumberOfAccounts(){
         return bankingSystem.getNumberOfAccounts();
-    }
-
-    public void clearAccounts(){
-        bankingSystem.clearAccounts();
     }
 }
 

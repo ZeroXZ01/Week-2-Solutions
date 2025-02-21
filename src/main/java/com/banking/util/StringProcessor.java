@@ -16,13 +16,11 @@ public class StringProcessor {
         StringBuilder report = new StringBuilder().append("Account Holder: ").append(name).append("\n").append("Account Type: ").append(accountType).append("\n").append("Balance: ").append(formatCurrency(balanceStr));
 
         // String formatting
-        System.out.printf("Created account for %s with %.2f balance%n",
-                         name, new BigDecimal(balanceStr));
+        System.out.printf("Created account for %s with %.2f balance%n", name, new BigDecimal(balanceStr));
     }
 
     private String formatCurrency(String amount) {
         BigDecimal value = new BigDecimal(amount);
-        return NumberFormat.getCurrencyInstance()
-                          .format(value);
+        return NumberFormat.getCurrencyInstance().format(value);
     }
 }
